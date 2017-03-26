@@ -122,6 +122,26 @@ function funcMoveBall(){
 		ball.dirY= 1
 	}
 	
+	/*x axis */
+	/*paddle*/
+	
+
+	if(ball.x+(ball.speed*ball.dirX) <= 40){
+		var ApaddleYbottom = parseInt($("#paddleA").css("top"))+ parseInt($("#paddleA").css("height"));
+		var ApaddleYtop= parseInt($("#paddleA").css("top"));
+
+		if((ball.y+ball.speed*ball.dirY>=ApaddleYtop) && (ball.y+ball.speed*ball.dirY<= ApaddleYbottom)){
+				ball.dirX=1}
+	}
+
+	if(ball.x+(ball.speed*ball.dirX)>=910){
+		var BpaddleYtop = parseInt($("#paddleB").css("top"));
+		var BpaddleYbottom = parseInt($("#paddleB").css("top")) + parseInt($("#paddleB").css("height"));
+
+		if((ball.y+ball.speed*ball.dirY<=BpaddleYbottom) && (ball.y+ball.speed*ball.dirY>=BpaddleYtop))
+			{ball.dirX=-1}
+	}
+
 	
 
 	$("#ball").css({"left":ball.x, "top":ball.y});
