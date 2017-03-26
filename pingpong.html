@@ -142,6 +142,26 @@ function funcMoveBall(){
 			{ball.dirX=-1}
 	}
 
+	/* bouncing back from border*/
+	if(ball.x+(ball.speed*ball.dirX)+50 > 960){
+		userLeftScore++;
+		ball.x=500;
+		ball.y=250;
+		pauseBall=true;
+		pauseBall=false;
+		window.alert("oops");
+		return;
+	}
+
+	if(ball.x+(ball.speed*ball.dirX)< 0){
+		userRightScore++;
+		ball.x=500;
+		ball.y=250;
+		pauseBall=true;
+		pauseBall=false;
+		window.alert("oops");
+		return;
+	}
 	
 
 	$("#ball").css({"left":ball.x, "top":ball.y});
