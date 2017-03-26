@@ -82,6 +82,25 @@ function gameloop(){
 	funcMovePaddles();
 }
 }
+
+function funcMovePaddles(){
+	if(pressingKey[commandKeys.W]){
+		var top= parseInt($("#paddleA").css("top"));
+		$("#paddleA").css("top", top-5);
+	}
+	if(pressingKey[commandKeys.S]){
+		var top= parseInt($("#paddleA").css("top"));
+		$("#paddleA").css("top",top+5);
+	}
+	if(pressingKey[commandKeys.UP]){
+		var top= parseInt($("#paddleB").css("top"));
+		$("#paddleB").css("top",top-5);
+	}
+	if(pressingKey[commandKeys.DOWN]){
+		var top= parseInt($("#paddleB").css("top"));
+		$("#paddleB").css("top",top+5);
+	}
+}
 </script>
 
 	
