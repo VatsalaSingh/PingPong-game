@@ -49,6 +49,41 @@
 		left:960px;
 	}
 
+	</style>
+
+	<script>
+/*object for command keys*/
+	var commandKeys = { UP: 38, DOWN: 40, W: 87, S: 83};
+
+	var pressingKey=[];
+
+	var ball = { speed:3, dirX: 1, dirY: 1, x: 500, y:250 };
+
+	var pauseBall= false;
+
+	var userRightScore=0;
+	var userLeftScore=0;
+
+/*storing keyboard event */
+$(document).ready(function(){
+	$(document).keydown(function(e){
+		pressingKey[e.which]=true;
+	});
+
+	$(document).keyup(function(e){
+		pressingKey[e.which]=false;
+	});
+	setInterval(gameloop, 15);
+});
+
+function gameloop(){
+	if(userLeftScore!=5&&userRightScore!=5){
+	funcMoveBall();
+	funcMovePaddles();
+}
+}
+</script>
+
 	
 </body>
 </html>
