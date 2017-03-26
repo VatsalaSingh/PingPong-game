@@ -101,6 +101,34 @@ function funcMovePaddles(){
 		$("#paddleB").css("top",top+5);
 	}
 }
+
+function funcMoveBall(){
+	var gameWidth = parseInt($("#game").width());
+	var gameHeight = parseInt($("#game").height());
+	document.getElementById('paddleA').innerHTML=userLeftScore;
+	document.getElementById('paddleB').innerHTML=userRightScore;
+
+	ball.x+= ball.speed*ball.dirX;
+	ball.y+= ball.speed*ball.dirY;
+
+	if(pauseBall) return;
+
+	/*y axis */
+	if(ball.y+(ball.speed*ball.dirY)+50 > gameHeight){
+		ball.dirY= -1
+	}
+
+	if(ball.y+(ball.speed*ball.dirY) <0){
+		ball.dirY= 1
+	}
+	
+	
+
+	$("#ball").css({"left":ball.x, "top":ball.y});
+
+};
+
+
 </script>
 
 	
